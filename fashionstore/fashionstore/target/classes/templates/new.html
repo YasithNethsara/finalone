@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/css/main.css">
+
+
+<meta charset="ISO-8859-1">
+
+<title>Welcome ! Add Your Feedback</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+
+<body bgcolor="#FAD7A0">
+
+</head>
+<body>
+<img src="http://localhost:8080/images/yasith.png" align="left" height="190" width="190">
+
+<div class="section">
+  
+<div class="video-container">
+
+  <h1><b>Welcome ! Add Your Feedback</b></h1>
+
+   <video class="bgvid" autoplay="autoplay" src="http://localhost:8080/images/117.mp4" muted preload="auto" loop></video>
+    <video class="bgvid" autoplay="autoplay" src="http://localhost:8080/images/57.mp4" muted preload="auto" loop></video>  
+  		 
+<div id="error"></div>
+<div class="inner-continer"><div class="box">
+    <form action="#" id="from" th:action="@{/save}" th:object="${User}" method="post">
+ 
+ 		<div alight="left">
+ 		<div class="kal">
+            <tr>
+                <label class="form-label" >Feedback</label>
+                <td>
+	                <input type="hidden" th:field="*{id}" />
+	                <input type="text" th:field="*{feedback}" class="form-control" placeholder="Add your feedback" required />
+                </td></tr></div>   
+                
+         <div alight="left">
+         <div class="kal">
+            <tr>
+                <label class="form-label" > Helpfull ?</label></div></div>
+                
+                <td>
+                 <input type="text" th:field="*{helpfull}" class="form-control" placeholder="Yes / No" required />
+                </td> </tr> </div><br>
+         
+            <tr>
+            <td colspan="2"><button type="submit" class="btn2">Post</button>
+          </td></tr></form></div></div></div></div>
+          
+          
+          
+<script type="text/javascript">
+
+
+const feedback = document.getElementById('feedback')
+const helpfull = document.getElementById('helpfull')
+const form = document.getElementById('form')
+const errorElement = document.getElementById('error')
+
+form.addEventListener('submit',(e)=>{
+	
+	let messages =[]
+	if(feedback.value === ''|| name.value == null){
+		
+		messages.push('Feedback is required')
+	}
+	
+	if(message.length > 0 ){
+		e.preventDefault()
+		errorElement.innerText = message.join(', ')
+	}
+	
+});
+
+
+</script>
+  
+</body>
+</html>
