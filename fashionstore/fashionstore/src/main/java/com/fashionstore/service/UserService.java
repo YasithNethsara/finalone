@@ -21,13 +21,14 @@ public class UserService {
 	
 	//returns the user table as a list
 	public List<User>listAll(Long keyword){
+		//search id null
 		if (keyword != null) {
 			return Repo.findAll(keyword);
     	
 		}
 		return Repo.findAll();
 	}
-	
+	//save feeback 
 	public void save(User us) {
 		Repo.save(us);
 	}
@@ -36,14 +37,13 @@ public class UserService {
 	public User get(int id) {
 		return Repo.findById((long) id).get();
 	}
+	//delete own ids feedback
 	public void delete(int id) {
 		Repo.deleteById((long) id);
 	}
 	
 	
-	         
-	       
-	    }
+}
 
 
 
